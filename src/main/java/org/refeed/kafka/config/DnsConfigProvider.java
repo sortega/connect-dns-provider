@@ -89,5 +89,10 @@ public class DnsConfigProvider implements ConfigProvider {
 
     @Override
     public void close() {
+        try {
+            resolver.close();
+        } catch (NamingException e) {
+            throw new ConfigException("Cannot close resolver", e);
+        }
     }
 }
