@@ -35,6 +35,12 @@ You can check SRV records with `dig`:
 0 0 9093 broker-z98a.default.svc.cluster.local.
 ```
 
+## Compatibility
+
+This library is compatible with all 2.x versions of Apache Kafka and
+versions 5.x and 6.x of the Confluent Distribution (see [compatibility
+matrix](https://docs.confluent.io/platform/current/installation/versions-interoperability.html)).
+
 ## How to use
 
 1. Add this library to Kafka connect classpath. Download it from 
