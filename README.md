@@ -37,7 +37,9 @@ You can check SRV records with `dig`:
 
 ## How to use
 
-1. Add this library to Kafka connect classpath. TODO: how?
+1. Add this library to Kafka connect classpath. Download it from 
+   [Maven Central][maven-central-redir] or from [releases](releases) and
+   leave it in `$kafka_home/libs/` or any other classpath directory.
    
 2. Configure `connect-distributed.properties`:
 
@@ -51,6 +53,10 @@ You can check SRV records with `dig`:
    "cassandra.contact.points": "${rsv:_cassandra._tcp.cluster1.example.com}"
    ```
    
+[maven-central-redir]: https://maven-badges.herokuapp.com/maven-central/org.refeed/connect-dns-provider
+
 ## Testing
 
-TODO
+```bash
+> mvn test
+```
