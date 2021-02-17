@@ -18,7 +18,7 @@ import java.util.*;
  * </p>
  *
  * <pre>
- * config.providers=dns
+ * config.providers=rsv
  * config.providers.dns.class=org.refeed.kafka.config.DnsConfigProvider
  * </pre>
  *
@@ -27,7 +27,7 @@ import java.util.*;
  * </p>
  *
  * <pre>
- * "cassandra.contact.points": "${dns:_cassandra._tcp.cluster1.example.com}"
+ * "cassandra.contact.points": "${rsv:_cassandra._tcp.cluster1.example.com}"
  * </pre>
  */
 public class DnsConfigProvider implements ConfigProvider {

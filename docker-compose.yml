@@ -39,12 +39,13 @@ services:
     container_name: connect
     depends_on:
       - broker
-      - schema-registry
     ports:
       - "8083:8083"
     volumes:
-      - ./target/components:/usr/share/refeed-components
+      - ./target/components/connect-dns-provider-0.1-SNAPSHOT.jar:/usr/share/java/kafka/connect-dns-provider.jar
     environment:
+      CONNECT_CONFIG_PROVIDERS: 'rsv'
+      CONNECT_CONFIG_PROVIDERS_DNS_CLASS: 'org.refeed.kafka.config.DnsConfigProvider'
       CONNECT_BOOTSTRAP_SERVERS: 'broker:29092'
       CONNECT_REST_ADVERTISED_HOST_NAME: connect
       CONNECT_REST_PORT: 8083
@@ -57,7 +58,6 @@ services:
       CONNECT_STATUS_STORAGE_TOPIC: docker-connect-status
       CONNECT_STATUS_STORAGE_REPLICATION_FACTOR: 1
       CONNECT_KEY_CONVERTER: org.apache.kafka.connect.storage.StringConverter
-      CONNECT_VALUE_CONVERTER: io.confluent.connect.avro.AvroConverter
-      CONNECT_VALUE_CONVERTER_SCHEMA_REGISTRY_URL: http://schema-registry:8081
-      CONNECT_PLUGIN_PATH: "/usr/share/java,/usr/share/confluent-hub-components,/usr/share/refeed-components"
+      CONNECT_VALUE_CONVERTER: org.apache.kafka.connect.storage.StringConverter
+      CONNECT_PLUGIN_PATH: "/usr/share/java,/usr/share/confluent-hub-components"
       CONNECT_LOG4J_LOGGERS: org.apache.zookeeper=ERROR,org.I0Itec.zkclient=ERROR,org.reflections=ERROR

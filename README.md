@@ -39,13 +39,13 @@ You can check SRV records with `dig`:
 2. Configure `connect-distributed.properties`:
 
    ```properties
-   config.providers=dns
+   config.providers=rsv
    config.providers.dns.class=org.refeed.kafka.config.DnsConfigProvider
    ```
-3. Use `${dns:}` expressions in connector configurations. For example:
+3. Use `${rsv:}` expressions in connector configurations. For example:
 
    ```
-   "cassandra.contact.points": "${dns:_cassandra._tcp.cluster1.example.com}"
+   "cassandra.contact.points": "${rsv:_cassandra._tcp.cluster1.example.com}"
    ```
    
 ## Testing
