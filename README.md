@@ -1,7 +1,8 @@
 # DNS resolution for Kafka Connect configurations
 
+[![Maven Central](https://img.shields.io/maven-central/v/org.refeed/connect-dns-provider)](
+https://search.maven.org/artifact/org.refeed/connect-dns-provider)
 ![CI](https://github.com/sortega/connect-dns-provider/workflows/CI/badge.svg?event=push)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.refeed/connect-dns-provider/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.refeed/connect-dns-provider)
 
 This is a small library to leverage DNS records of type SRV to avoid
 hardcoding lists of servers in Kafka Connect connector configurations
