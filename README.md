@@ -35,6 +35,11 @@ You can check SRV records with `dig`:
 0 0 9093 broker-z98a.default.svc.cluster.local.
 ```
 
+Read more about [SRV DNS records][wiki] and [SRV in Kubernetes][kube].
+
+[wiki]: https://en.wikipedia.org/wiki/SRV_record
+[kube]: https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#srv-records
+
 ## Compatibility
 
 This library is compatible with all 2.x versions of Apache Kafka and
