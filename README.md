@@ -57,7 +57,7 @@ matrix](https://docs.confluent.io/platform/current/installation/versions-interop
 
    ```properties
    config.providers=rsv
-   config.providers.dns.class=org.refeed.kafka.config.DnsConfigProvider
+   config.providers.rsv.class=org.refeed.kafka.config.DnsConfigProvider
    ```
 3. Use `${rsv:}` expressions in connector configurations. For example:
 
